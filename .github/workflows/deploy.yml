@@ -1,0 +1,28 @@
+name: deploy
+
+on:
+  workflow_dispatch: {} # only manual start
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Deploy to production
+    runs-on: ubuntu-20.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: gacts/fetch-doppler-secret@v1
+        id: deploy-token
+        with:
+          token: ${{ secrets.DOPPLER_NOMAD_PROJECT_TOKEN }}
+          project: nomad
+          secret-name: ACL_DEPLOY_TOKEN
+
+      - uses: gacts/install-nomad@v1
+
+      - run: nomad run -var="datadog_api_key=${{ secrets.DATADOG_API_KEY }}" ./deploy/service.hcl
+        env: {NOMAD_ADDR: 'https://nomad.iddqd.uk/', NOMAD_TOKEN: '${{ steps.deploy-token.outputs.secret }}'}
