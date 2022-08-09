@@ -13,6 +13,16 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  gitleaks:
+    name: Gitleaks
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+        with: {fetch-depth: 0}
+
+      - name: Check for GitLeaks
+        uses: gacts/gitleaks@v1 # Action page: <https://github.com/gacts/gitleaks>
+
   validate-nomad-manifest:
     name: Validate Nomad manifest
     runs-on: ubuntu-20.04
