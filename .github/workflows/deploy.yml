@@ -2,10 +2,10 @@ name: deploy
 
 on:
   workflow_dispatch: {}
-  #push:
-  #  paths: # docs: <https://bit.ly/3BSr3Xy>
-  #    - deploy/*.hcl
-  #    - .github/workflows/deploy.yml
+  push:
+    paths: # docs: <https://bit.ly/3BSr3Xy>
+      - deploy/*.hcl
+      - .github/workflows/deploy.yml
 
 concurrency:
   group: deploy
@@ -16,6 +16,9 @@ jobs:
     name: Deploy to production
     runs-on: ubuntu-20.04
     timeout-minutes: 5
+    concurrency: production
+    environment:
+      name: production
     steps:
       - uses: actions/checkout@v3
 
