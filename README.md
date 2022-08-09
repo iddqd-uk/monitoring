@@ -24,9 +24,7 @@ This repository contains its deploying manifest.
 
 For environment values management, you can use the Consul KV. This is very simple, your variables will be automatically passed to the container with the application _(containers will be restarted automatically)_. KV namespace is `apps/monitoring/datadog/agent/environment`.
 
-> For example, you create a key `apps/monitoring/datadog/agent/environment/DD_LOGS_ENABLED` with a value `false` - the environment variable `DD_LOGS_ENABLED` will be available inside the container with a value `false`.
-
-List with all supported environment variables you can [find here](../.env.example).
+> For example, if you create a key `apps/monitoring/datadog/agent/environment/DD_LOGS_ENABLED` with a value `false` - the environment variable `DD_LOGS_ENABLED` will be available inside the container with a value `false`.
 
 ### Links
 
