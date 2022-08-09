@@ -33,6 +33,5 @@ For environment values management, you can use the Consul KV. This is very simpl
 
 [badge_tests]:https://img.shields.io/github/workflow/status/iddqd-uk/monitoring/tests/main?logo=github&logoColor=white&label=tests
 [badge_deploy]:https://img.shields.io/github/workflow/status/iddqd-uk/monitoring/deploy/main?logo=github&logoColor=white&label=deploy
-
 [link_actions]:https://github.com/iddqd-uk/monitoring/actions
 [link_deploy]:https://github.com/iddqd-uk/monitoring/actions/workflows/deploy.yml
