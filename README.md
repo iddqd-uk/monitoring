@@ -3,7 +3,7 @@
 [![Tests Status][badge_tests]][link_actions]
 [![Deploy Status][badge_deploy]][link_deploy]
 
-Observability is an important part of any solution. And for cluster monitoring, I prefer to use a free solution - DataDog.
+Observability is an important part of any solution. And for cluster monitoring, I prefer to use a free solution (up to 5 hosts) - DataDog.
 
 This repository contains its deploying manifest.
 
