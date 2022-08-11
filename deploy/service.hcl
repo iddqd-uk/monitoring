@@ -77,11 +77,12 @@ job "monitoring" {
 
         # https://www.nomadproject.io/docs/job-specification/service#check-parameters
         check {
-          name     = "stats-port" # is stats port alive?
-          type     = "tcp"
-          interval = "10s"
-          timeout  = "2s"
-          port     = 8125
+          name         = "stats-port" # is stats port alive?
+          type         = "tcp"
+          interval     = "10s"
+          timeout      = "2s"
+          port         = 8125
+          address_mode = "driver"
         }
       }
     }
