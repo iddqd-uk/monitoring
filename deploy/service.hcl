@@ -31,9 +31,10 @@ job "monitoring" {
         volumes = [
           "/etc/os-release:/host/etc/os-release:ro",
           "/var/run/docker.sock:/var/run/docker.sock:ro",
+          "/var/lib/docker/containers/:/var/lib/docker/containers/:ro",
           "/proc/:/host/proc/:ro",
-          "/opt/datadog-agent/run:/opt/datadog-agent/run:rw",
-          "/sys/fs/cgroup/:/host/sys/fs/cgroup:ro",
+          "/opt/datadog-agent/run/:/opt/datadog-agent/run/:rw",
+          "/sys/fs/cgroup/:/host/sys/fs/cgroup/:ro",
           "/run/systemd/:/host/run/systemd/:ro", # https://bit.ly/3Qlemcf
         ]
         ports = ["metrics_port"]
