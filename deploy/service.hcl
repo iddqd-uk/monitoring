@@ -74,15 +74,6 @@ job "monitoring" {
       service {
         name = "datadog-agent"
         tags = ["monitoring"]
-
-        # https://www.nomadproject.io/docs/job-specification/service#check-parameters
-        check {
-          name     = "metrics-port"
-          type     = "tcp"
-          interval = "10s"
-          timeout  = "2s"
-          port     = "metrics_port"
-        }
       }
     }
   }
