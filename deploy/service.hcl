@@ -82,7 +82,7 @@ job "monitoring" {
           interval     = "10s"
           timeout      = "2s"
           port         = 8125
-          address_mode = "driver"
+          address_mode = "alloc"
         }
       }
     }
