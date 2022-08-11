@@ -69,6 +69,21 @@ job "monitoring" {
         memory     = 300 # in MB
         memory_max = 550 # in MB
       }
+
+      # https://www.nomadproject.io/docs/job-specification/service
+      service {
+        name = "datadog-agent"
+        tags = ["monitoring"]
+
+        # https://www.nomadproject.io/docs/job-specification/service#check-parameters
+        check {
+          name     = "stats-port" # is stats port alive?
+          type     = "tcp"
+          interval = "10s"
+          timeout  = "2s"
+          port     = 8125
+        }
+      }
     }
   }
 }
