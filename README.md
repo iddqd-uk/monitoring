@@ -31,7 +31,7 @@ For environment values management, you can use the Consul KV. This is very simpl
 - [DataDog containers onboarding](https://app.datadoghq.com/logs/onboarding/container)
 - [Agent sources](https://github.com/DataDog/datadog-agent)
 
-[badge_tests]:https://img.shields.io/github/workflow/status/iddqd-uk/monitoring/tests/main?logo=github&logoColor=white&label=tests
-[badge_deploy]:https://img.shields.io/github/workflow/status/iddqd-uk/monitoring/deploy/main?logo=github&logoColor=white&label=deploy
+[badge_tests]:https://img.shields.io/github/actions/workflow/status/iddqd-uk/monitoring/tests.yml?branch=main&logo=github&logoColor=white&label=tests
+[badge_deploy]:https://img.shields.io/github/actions/workflow/status/iddqd-uk/monitoring/deploy.yml?logo=github&logoColor=white&label=deploy
 [link_actions]:https://github.com/iddqd-uk/monitoring/actions
 [link_deploy]:https://github.com/iddqd-uk/monitoring/actions/workflows/deploy.yml
