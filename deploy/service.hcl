@@ -5,7 +5,7 @@ variable "datadog_api_key" {
 
 locals {
   # renovate: source=github-releases name=DataDog/datadog-agent
-  datadog_agent_version = "7.54.0"
+  datadog_agent_version = "7.54.1"
 }
 
 # https://www.nomadproject.io/docs/job-specification/job
